@@ -1,27 +1,60 @@
-### YJ
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
+  <img src="assets/header-light.svg" width="100%" alt="이용직 — LLM 애플리케이션과 데이터 파이프라인을 만듭니다">
+</picture>
+
+<p>
+  <a href="mailto:iaynu@naver.com"><img src="https://img.shields.io/badge/iaynu@naver.com-03C75A?style=flat-square&logo=naver&logoColor=white" alt="Naver Mail"></a>
+  <a href="mailto:revoll55555@gmail.com"><img src="https://img.shields.io/badge/revoll55555@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Gmail"></a>
+</p>
 
 LLM 애플리케이션과 데이터 파이프라인을 주로 다룹니다.
 노트북에서 끝나는 코드보다, 실행 조건과 테스트가 붙어 있는 코드를 만드는 데 관심이 있습니다.
 
 **지금 하는 것**
+- 팀 프로젝트에서 맡았던 부분을, 원본의 결함을 찾아 고치면서 재현 가능한 패키지로 다시 만들고 있습니다.
+- 포트폴리오 사이트를 준비하고 있습니다.
 
-팀 프로젝트에서 제가 맡았던 부분을, 원본의 결함을 찾아 고치면서 재현 가능한 패키지로 다시 만들고 있습니다.
-공공데이터를 이용한 제조 설비 이상탐지 파이프라인을 준비 중입니다.
+---
 
-**프로젝트**
+### 🔧 개인 작업
 
-[**korean-medical-rag**](https://github.com/iaynu/korean-medical-rag) — 한국어 하이브리드 RAG
+팀 프로젝트의 노트북 코드를 혼자 다시 읽고, 결함을 고쳐 테스트를 갖춘 파이썬 패키지로 재구성했습니다.
 
-BM25 토크나이저가 조사 때문에 사실상 동작하지 않던 문제를 문자 n-gram으로 해결하고, 순위 정보를 버리던 후보 병합을 RRF 융합으로 교체했습니다. 같은 ID로 서로 다른 문서가 덮어써지던 것도 함께 잡았습니다. 테스트 231건.
+**[korean-medical-rag](https://github.com/iaynu/korean-medical-rag)** — 한국어 하이브리드 RAG<br>
+BM25 토크나이저가 조사 때문에 사실상 동작하지 않던 문제를 문자 n-gram으로 해결하고, 순위 정보를 버리던 후보 병합을 RRF 융합으로 교체했습니다. 같은 ID로 서로 다른 문서가 덮어써지던 것도 함께 잡았습니다. `테스트 231건`
 
-[**stt-text-embedding-pipeline**](https://github.com/iaynu/stt-text-embedding-pipeline) — 119 신고 STT 텍스트 임베딩
+**[stt-text-embedding-pipeline](https://github.com/iaynu/stt-text-embedding-pipeline)** — 119 신고 STT 텍스트 임베딩<br>
+파일마다 다른 3종 JSON 스키마를 분기 대신 구조 탐색으로 흡수하고, 임베딩을 디스크에 쓰기 전에 NaN·Inf·영벡터를 검출합니다. 파일 20,041건 중 19,904건 처리, 실패 137건은 사유별로 기록됩니다. `테스트 76건`
 
-파일마다 다른 3종 JSON 스키마를 분기 대신 구조 탐색으로 흡수하고, 임베딩을 디스크에 쓰기 전에 NaN·Inf·영벡터를 검출합니다. 파일 20,041건 중 19,904건 처리, 실패 137건은 사유별로 기록됩니다. 테스트 76건.
+### 👥 팀 프로젝트
 
-**주로 쓰는 것**
+| 프로젝트 | 무엇을 | 제가 맡은 일 |
+|---|---|---|
+| **[THJ-press-pump-anomaly-detection](https://github.com/iaynu/THJ-press-pump-anomaly-detection)**<br><sub>KAMP 제조데이터 경진대회 · 3인</sub> | 진동·전류 시계열로 프레스 유압펌프 이상을 조기 탐지하고 오경보를 줄입니다. 정상 오경보율 1.3%, 실제 이상 21조각 재현율 100%, 주입 고장 11종 평균 재현율 71% | 팀원 각자 실험을 설계한 뒤, 각 방식의 장점을 결합해 최종 모델(2관점 MCD + 견고 보정 + 튐 복원)을 만들었습니다 |
+| **[lg-subscription-retention-agent](https://github.com/iaynu/lg-subscription-retention-agent)**<br><sub>LG전자 AX School · 6인</sub> | 가전 구독 고객의 30일 내 해지를 예측하고(XGBoost), 이유를 10개 이탈 유형으로 설명하고(SHAP), 유형별 조치를 AI Agent가 제안합니다. 30,000건 규모 합성 데이터 기반 | 데이터 스키마 설계, AI 파이프라인 설계 및 구현 |
+| **[khai-likelion-team-projects](https://github.com/iaynu/khai-likelion-team-projects)**<br><sub>lovelop · 멋쟁이사자처럼</sub> | 소상공인 전략을 가상 상권에서 미리 실험합니다. 망원동 매장 721곳 위에서 생성형 에이전트 160명이 외식 의사결정을 하고, 전략 전/후를 11개 지표로 비교합니다 | 데이터 적재, 백엔드, 시뮬레이션 설계 및 실험, 페르소나 정의, 프론트엔드 개발 |
+| **[LearnCraft](https://github.com/iaynu/LearnCraft)**<br><sub>멋쟁이사자처럼 KDT · 4인</sub> | 강의 녹취록에서 RAG로 퀴즈·해설·오답노트·학습 플랜을 만듭니다. 단답형은 GPT 의미 채점, 코드 완성형은 Judge0로 실행 채점 | 퀴즈 생성·채점 모듈(`src/quiz`) |
 
-Python · FastAPI · Celery / Redis · PyTorch · Transformers · LangChain · SQL (Oracle, PostgreSQL)
+---
 
-**자격증**
+### 🧰 주로 쓰는 것
+
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch">
+  <img src="https://img.shields.io/badge/Transformers-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Transformers">
+  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" alt="scikit-learn">
+  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangChain">
+</p>
+<p>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI">
+  <img src="https://img.shields.io/badge/Celery-37814A?style=flat-square&logo=celery&logoColor=white" alt="Celery">
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis">
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white" alt="Oracle">
+</p>
+
+### 📜 자격증
 
 정보처리기사 · SQLD · ADsP
