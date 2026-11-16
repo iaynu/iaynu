@@ -29,7 +29,6 @@ LLM 애플리케이션과 데이터 파이프라인을 주로 다룹니다.
 | **[THJ-press-pump-anomaly-detection](https://github.com/iaynu/THJ-press-pump-anomaly-detection)**<br><sub>KAMP 제조데이터 경진대회 · 3인</sub> | 진동·전류 시계열로 프레스 유압펌프 이상을 조기 탐지하고 오경보를 줄입니다. 정상 오경보율 1.3%, 실제 이상 21조각 재현율 100%, 주입 고장 11종 평균 재현율 71% | 팀원 각자 실험을 설계한 뒤, 각 방식의 장점을 결합해 최종 모델(2관점 MCD + 견고 보정 + 튐 복원)을 만들었습니다 |
 | **[korean-medical-rag](https://github.com/iaynu/korean-medical-rag)**<br><sub>멋쟁이사자처럼 · 5인 · `재구성`</sub> | 한국어 의료 QA 하이브리드 RAG. BM25와 벡터 검색을 융합하고 재랭킹한 뒤 LLM이 근거 문서로 답합니다 | 팀원 5인이 함께 설계·구현·실험. 이후 재구성하면서 조사 때문에 동작하지 않던 BM25 토크나이저(문자 n-gram), 순위를 버리던 후보 병합(RRF 융합), 문서 ID 충돌을 고쳤습니다. `테스트 231건` |
 | **[stt-text-embedding-pipeline](https://github.com/iaynu/stt-text-embedding-pipeline)**<br><sub>멋쟁이사자처럼 · 5인 · `재구성`</sub> | 119 신고 통화의 음성과 텍스트로 긴급도(하·중·상)를 분류하는 멀티모달 시스템의 텍스트 입력을 만듭니다 | 텍스트 임베딩 파트(STT 처리 기준 정의, KcELECTRA 임베딩 생성). 재구성하면서 3종 JSON 스키마를 구조 탐색으로 흡수하고, 저장 전 NaN·Inf·영벡터를 검출하게 했습니다. 20,041건 중 19,904건 처리. `테스트 76건` |
-| **[LearnCraft](https://github.com/iaynu/LearnCraft)**<br><sub>멋쟁이사자처럼 KDT · 4인</sub> | 강의 녹취록에서 RAG로 퀴즈·해설·오답노트·학습 플랜을 만듭니다. 단답형은 GPT 의미 채점, 코드 완성형은 Judge0로 실행 채점 | 퀴즈 생성·채점 모듈(`src/quiz`) |
 
 ---
 
